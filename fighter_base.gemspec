@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Interface for API for stockfighter.io stock simulation}
   spec.description   = %q{FIghter Base gives you access to level, exchange, and order information to
                           use to build market scripts and play the levels of the Stockfighter game.}
-  spec.homepage      = "https://github.com/bcbroom"
+  spec.homepage      = "https://github.com/bcbroom/FighterBase"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
