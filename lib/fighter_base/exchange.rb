@@ -2,7 +2,7 @@ require 'level'
 require 'httparty'
 
 module FighterBase
-    @attr_reader :venue_symbol, :level
+    attr_reader :venue_symbol, :level
 
     class Exchange
         def initialize(venue_symbol, level)

@@ -3,7 +3,7 @@ require 'httparty'
 
 module FighterBase
     class Level
-        @attr_reader api_key, exchange
+        attr_reader :api_key, :exchange
 
         def initialize(api_key, venue_symbol)
             @api_key = api_key
@@ -16,8 +16,6 @@ module FighterBase
 
             raise "World is on fire!" unless ok
             puts "lump lump, lump lump" if ok
-
-            end
         end
     end
 end
