@@ -1,7 +1,10 @@
+require "httparty"
+
 module FighterBase
-    attr_reader :venue_symbol, :level
 
     class Exchange
+        attr_reader :venue_symbol, :level
+
         def initialize(venue_symbol, level)
             @venue_symbol = venue_symbol
             @level = level

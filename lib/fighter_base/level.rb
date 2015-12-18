@@ -1,3 +1,5 @@
+require "httparty"
+
 module FighterBase
     class Level
         attr_reader :api_key, :exchange
