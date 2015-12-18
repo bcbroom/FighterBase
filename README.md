@@ -22,7 +22,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The main classes are 
+
+### Level
+
+Stores the `api_key`, and trading account
+
+### Venue
+
+Most interaction will be through this class. Quote for a stock, orderbook for a stock, place an order, cancel an order is done here.
+
+### Order
+
+Create orders, then place them using Venue#place_order
+
+## Notes
+
+There are still some parts that I'm not certain about. If you create an order with `Order#new`, then place it on a venue and it is partially filled. When you look at properties of the order, it won't be updated.
+
+Maybe the order instances should be able to update themselves, because they know the venue they were placed on?
+
+Its probably best to think of the Order instance as a cache, and the real data is kept on the server.
 
 ## Development
 
