@@ -1,0 +1,1 @@
+Version 0.1.0: Initial version - dummy Level and Exchange classes, methods only check game and exchange heartbeat endpoints.
