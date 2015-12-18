@@ -1,6 +1,3 @@
-require 'exchange'
-require 'httparty'
-
 module FighterBase
     class Level
         attr_reader :api_key, :exchange
@@ -10,8 +7,8 @@ module FighterBase
             @exchange = Exchange.new(venue_symbol, self)
         end
 
-        def hearbeat
-            response = HTTParty.get("https://api.stockfighter.io/ob/api/hearbeat")
+        def heartbeat
+            response = HTTParty.get("https://api.stockfighter.io/ob/api/heartbeat")
             ok = response.parsed_response["ok"] rescue false
 
             raise "World is on fire!" unless ok

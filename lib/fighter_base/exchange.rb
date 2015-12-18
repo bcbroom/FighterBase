@@ -1,6 +1,3 @@
-require 'level'
-require 'httparty'
-
 module FighterBase
     attr_reader :venue_symbol, :level
 
@@ -11,7 +8,7 @@ module FighterBase
         end
 
         def heartbeat
-            response = HTTParty.get("https://api.stockfighter.io/ob/api/venues/#{venue_symbol}/heartbeat")
+            response = HTTParty.get("https://api.stockfighter.io/ob/api/venues/#{@venue_symbol}/heartbeat")
             ok = response.parsed_response["ok"] rescue false
 
             raise "World is on fire!" unless ok
