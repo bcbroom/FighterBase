@@ -2,10 +2,11 @@ require "httparty"
 
 module FighterBase
     class Level
-        attr_reader :api_key, :exchange
+        attr_reader :api_key, :account, :exchange
 
-        def initialize(api_key, venue_symbol)
+        def initialize(api_key, account, venue_symbol)
             @api_key = api_key
+            @account = account
             @exchange = Exchange.new(venue_symbol, self)
         end
 

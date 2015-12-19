@@ -1,8 +1,6 @@
 # FighterBase
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fighter_base`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Wrapper methods for interacting with the APIs in the Stockfighter.io game.
 
 ## Installation
 
@@ -26,15 +24,33 @@ The main classes are
 
 ### Level
 
-Stores the `api_key`, and trading account
+`level = FighterBase::Level.new(api_key, account, venue_symbol)`
 
-### Venue
+Creating a Level instance also creates an Exchange instance of the given venue. You need the Exchange instance to get quotes and place orders.
 
-Most interaction will be through this class. Quote for a stock, orderbook for a stock, place an order, cancel an order is done here.
+### Exchange
+
+Most interaction will be through this class. Quote for a stock, orderbook for a stock, place an order, cancel an order is done here. Methods return JSON from the APIs parsed into a hash.
+
+`ex = level.exchange`
+
+`quote = ex.get_quote("FAC")`
+
+then get information from it as
+
+`quote["ask"]` or `quote["bid_size"]`
 
 ### Order
 
-Create orders, then place them using Venue#place_order
+Class is not implemented yet - still working how to model them in this system.
+
+Orders can be placed and canceled through the `Exchange` insance
+
+`order = ex.place_order(stock: symbol, price: ask, qty: size, direction: "buy", type: "limit")`
+
+_Note:_ `Exchange#place_order` currently returns a hash. In the future it will return a propper `Order` instance.
+
+_Note:_ Order method uses named argument style method. The rest of the methods will soon switch to that style.
 
 ## Notes
 
